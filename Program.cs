@@ -40,16 +40,4 @@ namespace ICSBirthdayValidator
             }
         }
     }
-
-    public class BirthdayInformation
-    {
-        public string Name { get; set; }
-        public bool Recurring { get; set; }
-        public string Date { get; set; }
-
-        public override string ToString()
-        {
-            return $"Name: {Name}, recurring: {Recurring} on date: {Date}";
-        }
-    }
 }
