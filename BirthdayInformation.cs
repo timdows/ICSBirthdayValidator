@@ -15,7 +15,7 @@ namespace ICSBirthdayValidator
 
         public override string ToString()
         {
-            return $"Name: {Name}, recurring: {Recurring} on date: {Date}";
+            return $"Name: {Name.Replace("SUMMARY:", string.Empty)}, recurring: {Recurring} on date: {Date.Replace("DTSTART;VALUE=DATE:", string.Empty)}";
         }
 
         public bool HasValidInformation()
