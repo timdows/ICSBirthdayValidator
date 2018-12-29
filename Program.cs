@@ -30,12 +30,15 @@ namespace ICSBirthdayValidator
                 {
                     var formattedLines = calendarEvent.Split("\r\n").ToList();
                     var birthdayInformation = new BirthdayInformation();
-                    
+
                     birthdayInformation.Recurring = formattedLines.Any(line => line.Contains("FREQ=YEARLY"));
                     birthdayInformation.Name = formattedLines.SingleOrDefault(item => item.Contains("SUMMARY:"));
                     birthdayInformation.Date = formattedLines.SingleOrDefault(item => item.Contains("DTSTART;VALUE=DATE:"));
 
-                    Console.WriteLine(birthdayInformation);
+                    if (birthdayInformation.HasValidInformation())
+                    {
+                        Console.WriteLine(birthdayInformation);
+                    }
                 }
             }
         }

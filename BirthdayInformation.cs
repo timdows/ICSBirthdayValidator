@@ -17,5 +17,10 @@ namespace ICSBirthdayValidator
         {
             return $"Name: {Name}, recurring: {Recurring} on date: {Date}";
         }
+
+        public bool HasValidInformation()
+        {
+            return !string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(Date);
+        }
     }
 }
